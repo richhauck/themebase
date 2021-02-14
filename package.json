@@ -1,0 +1,23 @@
+{
+  "name": "ThemeBase",
+  "version": "0.0.1",
+  "description": "Simple scaffolding tool for a website template built in 11ty",
+  "scripts": {
+    "start": "eleventy --serve & postcss styles/main.css --o _tmp/styles/main.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/main.css > _site/styles/main.css && cleancss _site/styles/main.css -o _site/styles/main.css && terser ./scripts/*.js --source-map -o _site/scripts/main.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.1.0",
+    "clean-css-cli": "^4.3.0",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2",
+    "terser": "^5.6.0",
+    "postcss-import": "^14.0.0"
+  },
+  "keywords": [],
+  "author": "Hauck Interactive, Inc.",
+  "license": "MIT"
+}
